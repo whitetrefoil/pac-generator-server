@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="server" type="NodeJSConfigurationType" factoryName="Node.js" application-parameters="tests/temp/asdf.toml" nameIsGenerated="true" path-to-js-file="bin/server" working-dir="$PROJECT_DIR$">
+    <envs>
+      <env name="DEBUG" value="pac-generator-server*" />
+    </envs>
+    <method v="2" />
+  </configuration>
+</component>

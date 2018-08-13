@@ -1,0 +1,4 @@
+host = "localhost"
+port = 48332
+pacDir = "tests/pac"
+prefix = "/pac"
