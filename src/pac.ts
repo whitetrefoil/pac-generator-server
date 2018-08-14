@@ -1,5 +1,6 @@
 import getLogger from 'debug'
 import * as toml from 'toml'
+import { getBase64Polyfill } from './base64'
 
 
 interface IDefinition {
@@ -21,7 +22,9 @@ export default function generate(
   const rules  = parsed.rules || []
   debug('Rules: ', rules)
 
-  let text = 'function f(url,host){host=host.toLowerCase();if(false'
+  const base64Polyfill = getBase64Polyfill()
+
+  let text = `function fn(url,host){host=host.toLowerCase();if(false`
 
   for (let i = 0; i < rules.length; i++) {
     const rule = rules[i]
@@ -37,9 +40,7 @@ export default function generate(
 
   text += `) {return '${type} ${host}:${port}';}return 'DIRECT';}`
 
-  const functionStr = plain
-    ? text
-    : `eval(atob('${new Buffer(text).toString('base64')}'))`
+  const base64 = plain ? text : `eval(atob('${new Buffer(text).toString('base64')}'))`
 
-  return `${functionStr};function FindProxyForURL(url,host){return f(url,host)}`
+  return `${base64Polyfill};${base64};function FindProxyForURL(url,host){return fn(url,host)}`
 }

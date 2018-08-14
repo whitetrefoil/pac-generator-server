@@ -11,7 +11,7 @@
     "module"                      : "esnext",
     "moduleResolution"            : "node",
     "noImplicitAny"               : true,
-    "outDir"                      : "lib/esm",
+    "outDir"                      : "lib-esm",
     "removeComments"              : false,
     "skipLibCheck"                : true,
     "sourceMap"                   : true,
