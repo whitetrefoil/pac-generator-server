@@ -76,6 +76,11 @@ In the above query:
 Changelog
 ---------
 
+### v0.1.4
+
+* Better docs & keywords.
+* Ignore "lib-esm".
+
 ### v0.1.3
 
 * Fix wrong changelog order.
