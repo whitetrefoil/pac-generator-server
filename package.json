@@ -31,7 +31,7 @@
     "pac-generator-server": "bin/server"
   },
   "files": [
-    "bin/**/*.js",
+    "bin/**/*",
     "lib/**/*.js",
     "lib-esm/**/*.js",
     "lib-esm/types/**/*.d.ts",
