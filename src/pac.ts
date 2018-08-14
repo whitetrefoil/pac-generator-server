@@ -37,7 +37,9 @@ export default function generate(
 
   text += `) {return '${type} ${host}:${port}';}return 'DIRECT';}`
 
-  if (plain) { return text }
+  if (plain) {
+    return `${text}alert(window)`
+  }
 
   const base64 = new Buffer(text).toString('base64')
 
