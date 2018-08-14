@@ -23,7 +23,7 @@
     "koa",
     "server",
     "proxy",
-    "middleware"
+    "pac"
   ],
   "author": "WhiteTrefoil <whitetrefoil@gmail.com>",
   "license": "CC0-1.0",
