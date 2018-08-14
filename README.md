@@ -36,6 +36,10 @@ In the above query:
 Changelog
 ---------
 
+### v0.1.3
+
+* Fix wrong changelog order.
+
 ### v0.1.2
 
 * Fix missing bin file in "bin" dir.
