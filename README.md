@@ -36,13 +36,13 @@ In the above query:
 Changelog
 ---------
 
-### v0.1.1
-
-* Add missing `npm publish` checklist js.
-
 ### v0.1.2
 
 * Fix missing bin file in "bin" dir.
+
+### v0.1.1
+
+* Add missing `npm publish` checklist js.
 
 ### v0.1.0
 
