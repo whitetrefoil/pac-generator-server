@@ -69,7 +69,7 @@ function parsePac(config: IConfig): Koa.Middleware {
       }
 
       try {
-        const generated = generate(data, ctx.query.p, ctx.query.h, ctx.query.t)
+        const generated = generate(data, ctx.query.p, ctx.query.h, ctx.query.t, ctx.query.debug)
 
         ctx.state = 200
         ctx.set('Content-Type', 'application/x-ns-proxy-autoconfig')

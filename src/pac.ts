@@ -13,8 +13,9 @@ const debug = getLogger('pac-generator-server:pac.ts')
 export default function generate(
   raw: Buffer|string,
   port: string,
-  host: string = 'localhost',
-  type: string = 'PROXY',
+  host  = 'localhost',
+  type  = 'PROXY',
+  plain = false,
 ): string {
   const parsed = toml.parse(raw as string) as IDefinition
   const rules  = parsed.rules || []
@@ -32,6 +33,8 @@ export default function generate(
   }
 
   text += `) {return '${type} ${host}:${port}';}return 'DIRECT';}`
+
+  if (plain) { return text }
 
   const base64 = new Buffer(text).toString('base64')
 
