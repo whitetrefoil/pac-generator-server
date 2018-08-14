@@ -21,7 +21,7 @@ export default function generate(
   const rules  = parsed.rules || []
   debug('Rules: ', rules)
 
-  let text = 'function FindProxyForURL(url,host){host=host.toLowerCase();if(false'
+  let text = 'function f(url,host){host=host.toLowerCase();if(false'
 
   for (let i = 0; i < rules.length; i++) {
     const rule = rules[i]
@@ -37,11 +37,9 @@ export default function generate(
 
   text += `) {return '${type} ${host}:${port}';}return 'DIRECT';}`
 
-  if (plain) {
-    return `(${text})()`
-  }
+  const functionStr = plain
+    ? text
+    : `eval(atob('${new Buffer(text).toString('base64')}'))`
 
-  const base64 = new Buffer(text).toString('base64')
-
-  return `eval(atob('${base64}'))`
+  return `${functionStr};function FindProxyForURL(url,host){return f(url,host)}`
 }
