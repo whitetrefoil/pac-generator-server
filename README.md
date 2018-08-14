@@ -3,6 +3,7 @@
 
 A tiny koa server that generates PAC file from config file.
 
+
 Usage
 -----
 
@@ -30,3 +31,11 @@ In the above query:
 * **t** for **TYPE**, e.g. HTTPS, SOCKS, default is PROXY
 * **h** for **HOST**, default is localhost
 * **p** for **PORT**, this one is **REQUIRED**
+
+
+Changelog
+---------
+
+### v0.1.0
+
+* Initial release.
