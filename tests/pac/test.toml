@@ -1,4 +1,5 @@
 rules = [
 "*domain*",
+"*.subdomain.com",
 "another.com",
 ]

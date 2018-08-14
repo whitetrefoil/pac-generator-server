@@ -25,10 +25,13 @@ export default function generate(
 
   for (let i = 0; i < rules.length; i++) {
     const rule = rules[i]
-    if (rule.indexOf('*') >= 0) {
+    const match = rule.match(/\*/g)
+    if (match == null) {
+      text += `||dnsDomainIs(host,"${rule}")`
+    } else if (match.length > 1) {
       text += `||shExpMatch(url,"${rule}")`
     } else {
-      text += `||dnsDomainIs(host,"${rule}")`
+      text += `||shExpMatch(host,"${rule}")`
     }
   }
 
